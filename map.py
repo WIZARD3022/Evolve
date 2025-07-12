@@ -41,12 +41,12 @@ class Map:
         self.width = width
         self.height = height
         self.tiles = [70, 50]  # This can be expanded to hold tile data
-        self.size = [(self.width//self.tiles[0]), (self.height//self.tiles[1])]
-        self.arr = [[0 for _ in range(self.size[0])] for _ in range(self.size[1])]
+        self.size = [10, 10]
+        self.arr = [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
         self.generate_map()
 
     def draw(self, screen):
-        # Placeholder for map drawing logic
+        # Placeholder for map drawing 
         for i in range(len(self.arr)):
             print(self.arr[i])
             for j in range(len(self.arr[0])):
