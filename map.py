@@ -69,8 +69,24 @@ class Map:
         for i in range(len(self.arr)):
             for j in range(len(self.arr)):
                 # Randomly assign tile types
-                
-                self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
+                if i != 0 and i != len(self.arr) - 1:
+                    Random = random.randint(0, 10)
+                    # prob = random.randint(0, 10)
+                    point = 0
+                    if j != 0 and j != len(self.arr[0]) - 1:
+                        if self.arr[i - 1][j - 1] == 1:
+                            point += 1
+                        if self.arr[i - 1][j] == 1:
+                            point += 1
+                        if self.arr[i - 1][j + 1] == 1:
+                            point += 1
+                        if self.arr[i][j - 1] == 1:
+                            point += 1
+
+                    prob = 10 - point*2
+                    if Random > prob:
+                        self.arr[i][j] = 1
+                    # self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
         pass
 
     def update(self):
