@@ -44,7 +44,7 @@ class Map:
         self.width = width
         self.height = height
         self.tiles = [70, 50]  # This can be expanded to hold tile data
-        self.arr = [[0 for _ in range(self.width/self.tiles[0])] for _ in range(self.height/self.tiles[1])]
+        self.arr = [[0 for _ in range(self.width//self.tiles[0])] for _ in range(self.height//self.tiles[1])]
 
 
     def draw(self, screen):
@@ -71,7 +71,7 @@ def main():
     # Screen settings
     WIDTH, HEIGHT = 800, 600
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Simple Pygame Example")
+    pygame.display.set_caption("Map")
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
