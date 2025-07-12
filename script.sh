@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Activate the virtual environment
-# source myenv/Scripts/activate
+source myenv/Scripts/activate
 
-# # Run the Python script
-# python map.py
+# Run the Python script
+python map.py
 
 
 # Default commit message or use the one from argument
@@ -12,6 +12,7 @@ COMMIT_MSG=${1:-"Auto commit"}
 
 echo "Adding all files..."
 git add .
+# git reset script.sh
 
 echo "Committing with message: $COMMIT_MSG"
 git commit -m "$COMMIT_MSG"
