@@ -45,7 +45,7 @@ class Map:
         self.height = height
         self.tiles = [70, 50]  # This can be expanded to hold tile data
         self.arr = [[0 for _ in range(self.width//self.tiles[0])] for _ in range(self.height//self.tiles[1])]
-
+        self.generate_map()
 
     def draw(self, screen):
         # Placeholder for map drawing logic
@@ -53,10 +53,23 @@ class Map:
             for j in range(len(self.arr[0])):
                 # Draw each tile based on its type
                 if self.arr[i][j] == 0:
-                    pygame.draw.rect(screen, GREEN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                    pygame.draw.rect(screen, BLUE, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
                 elif self.arr[i][j] == 1:
+                    pygame.draw.rect(screen, GREEN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                elif self.arr[i][j] == 2:
                     pygame.draw.rect(screen, BROWN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
-                # Add more tile types as needed
+                elif self.arr[i][j] == 3:
+                    pygame.draw.rect(screen, WHITE, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                elif self.arr[i][j] == 4:
+                    pygame.draw.rect(screen, YELLOW, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                elif self.arr[i][j] == 5:
+                    pygame.draw.rect(screen, DARK_GREEN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+
+    def generate_map(self):
+        for i in range(len(self.arr)):
+            for j in range(len(self.arr[0])):
+                # Randomly assign tile types
+                self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
         pass
 
     def update(self):
