@@ -40,8 +40,8 @@ class Map:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.tiles = [70, 50]  # This can be expanded to hold tile data
-        self.size = [10, 10]
+        self.tiles = [70, 50]  # tile count
+        self.size = [10, 10]   # tile size
         self.arr = [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
         self.generate_map()
 
@@ -66,7 +66,7 @@ class Map:
 
     def generate_map(self):
         for i in range(len(self.arr)):
-            for j in range(len(self.arr[0])):  # Fix: iterate over columns correctly
+            for j in range(len(self.arr[0])):
                 if i != 0 and i != len(self.arr) - 1:
                     rand_val = random.randint(0, 10)
                     point = 0
@@ -85,8 +85,8 @@ class Map:
                             self.arr[i][j] = 1
                     else:
                         self.arr[i][j] = random.choice([0, 1])  # Fix: use random module
-                else:
-                    self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
+                # else:
+                    # self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
 
         pass
 
