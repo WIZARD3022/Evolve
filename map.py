@@ -86,7 +86,7 @@ def main():
     # Game Loop
     running = True
     while running:
-        clock.tick(FPS)  # Limit FPS
+        # clock.tick(FPS)  # Limit FPS
         pygame.display.set_caption(f"Map and fps :{clock.tick(FPS)}")
 
         screen.fill(BLACK)  # Clear screen
