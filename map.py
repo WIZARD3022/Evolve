@@ -53,7 +53,7 @@ class Map:
             for j in range(len(self.arr[0])):
                 # Draw each tile based on its type
                 if self.arr[i][j] == 0:
-                    pygame.draw.rect(screen, GREEN, (j * self.tiles[0], i * self.tiles[1], self.tiles[0], self.tiles[1]))
+                    pygame.draw.rect(screen, GREEN, (j * j * self.tiles[0], i * self.tiles[1], self.tiles[0], self.tiles[1]))
                 elif self.arr[i][j] == 1:
                     pygame.draw.rect(screen, BROWN, (j * self.tiles[0], i * self.tiles[1], self.tiles[0], self.tiles[1]))
                 # Add more tile types as needed
