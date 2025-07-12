@@ -45,7 +45,29 @@ class Map:
         self.height = height
         self.tiles = [70, 50]  # This can be expanded to hold tile data
         self.arr = [[0 for _ in range(self.width//self.tiles[0])] for _ in range(self.height//self.tiles[1])]
-        self.generate_map()
+        # self.generate_map()
+        for i in range(len(self.arr)):
+            for j in range(len(self.arr[0])):  # Fix: iterate over columns correctly
+                if i != 0 and i != len(self.arr) - 1:
+                    rand_val = random.randint(0, 10)
+                    point = 0
+                    if j != 0 and j != len(self.arr[0]) - 1:
+                        if self.arr[i - 1][j - 1] == 1:
+                            point += 1
+                        if self.arr[i - 1][j] == 1:
+                            point += 1
+                        if self.arr[i - 1][j + 1] == 1:
+                            point += 1
+                        if self.arr[i][j - 1] == 1:
+                            point += 1
+
+                        prob = 10 - point * 2
+                        if rand_val > prob:
+                            self.arr[i][j] = 1
+                    else:
+                        self.arr[i][j] = random.choice([0, 1])  # Fix: use random module
+                else:
+                    self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
 
     def draw(self, screen):
         # Placeholder for map drawing logic
@@ -89,33 +111,11 @@ class Map:
     #                 else:
     #                     self.arr[i][j] = Random.choice([0, 1])
                     # self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
-    import random
+    
 
-def generate_map(self):
-    for i in range(len(self.arr)):
-        for j in range(len(self.arr[0])):  # Fix: iterate over columns correctly
-            if i != 0 and i != len(self.arr) - 1:
-                rand_val = random.randint(0, 10)
-                point = 0
-                if j != 0 and j != len(self.arr[0]) - 1:
-                    if self.arr[i - 1][j - 1] == 1:
-                        point += 1
-                    if self.arr[i - 1][j] == 1:
-                        point += 1
-                    if self.arr[i - 1][j + 1] == 1:
-                        point += 1
-                    if self.arr[i][j - 1] == 1:
-                        point += 1
+# def generate_map(self):
 
-                    prob = 10 - point * 2
-                    if rand_val > prob:
-                        self.arr[i][j] = 1
-                else:
-                    self.arr[i][j] = random.choice([0, 1])  # Fix: use random module
-            else:
-                self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
-
-        pass
+#         pass
 
     def update(self):
         # Placeholder for map update logic
