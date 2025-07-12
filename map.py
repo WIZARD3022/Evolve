@@ -36,9 +36,6 @@ DARK_GREEN = (0, 100, 0)
     # Update display
     # pygame.display.flip()
 
-
-
-
 class Map:
     def __init__(self, width, height):
         self.width = width
@@ -53,43 +50,17 @@ class Map:
             for j in range(len(self.arr[0])):
                 # Draw each tile based on its type
                 if self.arr[i][j] == 0:
-                    pygame.draw.rect(screen, BLUE, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                    pygame.draw.rect(screen, BLUE, (j * self.width//self.tiles[0] + 50, i * self.width//self.tiles[1] + 50, self.width//self.tiles[0], self.width//self.tiles[1]))
                 elif self.arr[i][j] == 1:
-                    pygame.draw.rect(screen, GREEN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                    pygame.draw.rect(screen, GREEN, (j * self.width//self.tiles[0] + 50, i * self.width//self.tiles[1] + 50, self.width//self.tiles[0], self.width//self.tiles[1]))
                 elif self.arr[i][j] == 2:
-                    pygame.draw.rect(screen, BROWN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
+                    pygame.draw.rect(screen, BROWN, (j * self.width//self.tiles[0] + 50, i * self.width//self.tiles[1] + 50, self.width//self.tiles[0], self.width//self.tiles[1]))
                 elif self.arr[i][j] == 3:
                     pygame.draw.rect(screen, WHITE, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
                 elif self.arr[i][j] == 4:
                     pygame.draw.rect(screen, YELLOW, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
                 elif self.arr[i][j] == 5:
                     pygame.draw.rect(screen, DARK_GREEN, (j * self.tiles[0] + 50, i * self.tiles[1] + 50, self.tiles[0], self.tiles[1]))
-
-    # def generate_map(self):
-    #     for i in range(len(self.arr)):
-    #         for j in range(len(self.arr)):
-    #             # Randomly assign tile types
-    #             if i != 0 and i != len(self.arr) - 1:
-    #                 Random = random.randint(0, 10)
-    #                 # prob = random.randint(0, 10)
-    #                 point = 0
-    #                 if j != 0 and j != len(self.arr[0]) - 1:
-    #                     if self.arr[i - 1][j - 1] == 1:
-    #                         point += 1
-    #                     if self.arr[i - 1][j] == 1:
-    #                         point += 1
-    #                     if self.arr[i - 1][j + 1] == 1:
-    #                         point += 1
-    #                     if self.arr[i][j - 1] == 1:
-    #                         point += 1
-
-    #                     prob = 10 - point*2
-    #                     if Random > prob:
-    #                         self.arr[i][j] = 1
-    #                 else:
-    #                     self.arr[i][j] = Random.choice([0, 1])
-                    # self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
-    
 
     def generate_map(self):
         for i in range(len(self.arr)):
