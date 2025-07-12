@@ -81,7 +81,7 @@ class Map:
                             point += 1
 
                         prob = 10 - point * 2.5
-                        if rand_val > prob:
+                        if rand_val < prob:
                             self.arr[i][j] = 1
                     else:
                         self.arr[i][j] = random.choice([0, 1])  # Fix: use random module
