@@ -71,7 +71,6 @@ def main():
     # Screen settings
     WIDTH, HEIGHT = 800, 600
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption(f"Map and fps :{FPS}")
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
@@ -88,6 +87,8 @@ def main():
     running = True
     while running:
         clock.tick(FPS)  # Limit FPS
+        pygame.display.set_caption(f"Map and fps :{FPS}")
+
         screen.fill(BLACK)  # Clear screen
 
         # Event handling
