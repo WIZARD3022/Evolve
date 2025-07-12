@@ -85,8 +85,8 @@ class Map:
                             self.arr[i][j] = 1
                     else:
                         self.arr[i][j] = random.choice([0, 1])  # Fix: use random module
-                # else:
-                    # self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
+                else:
+                    self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
 
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
