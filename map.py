@@ -67,8 +67,9 @@ class Map:
 
     def generate_map(self):
         for i in range(len(self.arr)):
-            for j in range(len(self.arr[0])):
+            for j in range(len(self.arr)):
                 # Randomly assign tile types
+                
                 self.arr[i][j] = random.choice([0, 1, 2, 3, 4, 5])
         pass
 
