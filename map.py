@@ -149,7 +149,7 @@ def main():
                     map.generate_map()
                     map.draw(screen)
 
-            pygame.display.flip()
+        pygame.display.flip()
 
 
 
