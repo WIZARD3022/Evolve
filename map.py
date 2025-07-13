@@ -66,8 +66,8 @@ class Map:
 
     def cal(self, x, y):
         val = 0
-        origin_x = x - 10
-        origin_y = y - 14
+        origin_x = x - 7
+        origin_y = y - 12
         for i in range(origin_x, x):
             for j in range(origin_y, y):
                 if i >= 0 and j >= 0 and i < len(self.arr) and j < len(self.arr[0]):
