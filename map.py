@@ -140,12 +140,13 @@ class Map:
                 else:
                     self.arr[i][j] = random.choice([0, 1])  # Optional: fill borders
 
+        self.transform_map()
+
         for i in range(len(self.arr)):
             for j in range(len(self.arr[0])):
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
 
-        self.transform_map()
 
     def check(self, x, y, val):
 
