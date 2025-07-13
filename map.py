@@ -76,7 +76,7 @@ class Map:
                         val += 1
         return val
     
-    def improve_map_realism(self, smooth_passes=2):
+    def improve_map_realism(self, smooth_passes=5):
         """
         Smooths and improves the terrain to make it more natural.
         - smooth_passes: number of smoothing iterations
@@ -226,12 +226,12 @@ class Map:
                 if 0 <= i <= 5 or len(self.arr[i]) - 5 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
-                    if rand_val > 7 and condition == 1:
+                    if rand_val > 6 and condition == 1:
                         self.arr[i][j] = 3
                 if 0 <= i <= 6 or len(self.arr[i]) - 6 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 0)
-                    if rand_val > 9 and condition == 1:
+                    if rand_val > 8 and condition == 1:
                         self.arr[i][j] = 3
 
         for i in range(1, len(self.arr)-1):
