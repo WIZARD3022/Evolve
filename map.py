@@ -136,7 +136,7 @@ def main():
         # clock.tick(FPS)  # Limit FPS
         pygame.display.set_caption(f"Map and fps :{clock.tick(FPS)}")
 
-        screen.fill(BLACK)  # Clear screen
+        # screen.fill(BLACK)  # Clear screen
 
         # Event handling
         for event in pygame.event.get():
