@@ -66,8 +66,8 @@ class Map:
 
     def cal(self, x, y):
         val = 0
-        origin_x = x - 5
-        origin_y = y - 7
+        origin_x = x - 10
+        origin_y = y - 14
         for i in range(origin_x, x):
             for j in range(origin_y, y):
                 if i >= 0 and j >= 0 and i < len(self.arr) and j < len(self.arr[0]):
@@ -108,7 +108,13 @@ class Map:
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
 
-        # pass
+        self.transform_map()
+
+    def transform_map(self):
+        for i in range(len(self.arr)):
+            for j in range(len(self.arr[0])):
+                if 
+        pass
 
     def update(self):
         # Placeholder for map update logic
