@@ -76,7 +76,7 @@ class Map:
         for i in range(len(self.arr)):
             for j in range(len(self.arr[0])):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 12)
+                    rand_val = random.randint(0, 15)
                     point = 0
                     if j != 0 and j != len(self.arr[0]) - 1:
                         if self.arr[i - 1][j - 1] == 1:
