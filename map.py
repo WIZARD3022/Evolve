@@ -39,8 +39,11 @@ class Map:
         self.height = height
         self.tiles = [70, 50]  # tile count
         self.size = [10, 10]   # tile size
-        self.arr = [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
+        self.arr = self.new()  # Initialize the map array
         self.generate_map()
+
+    def new(self):
+        return [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
 
     def draw(self, screen):
         # Placeholder for map drawing 
@@ -146,6 +149,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     running = False
                 elif event.key == pygame.K_SPACE:
+                    map.arr = map.new()
                     map.generate_map()
                     map.draw(screen)
 
