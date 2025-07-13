@@ -16,7 +16,6 @@ DARK_GREEN = (0, 100, 0)
 # player_speed = 5
 
 
-
     # Key handling
     # keys = pygame.key.get_pressed()
     # if keys[pygame.K_LEFT]:
