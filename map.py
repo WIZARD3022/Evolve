@@ -125,11 +125,11 @@ def main():
     FPS = 60
 
     map = Map(700, 500)
-    map.draw(screen)
+    # map.draw(screen)
 
-    area = pygame.Rect(50, 50, 10, 10)
+    # area = pygame.Rect(50, 50, 10, 10)
 
-    pygame.draw.rect(screen, BLUE, area)
+    # pygame.draw.rect(screen, BLUE, area)
     pygame.display.flip()
     # Game Loop
     running = True
