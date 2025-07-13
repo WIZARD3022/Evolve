@@ -136,7 +136,7 @@ class Map:
         for i in range(2, len(self.arr)-2):
             for j in range(2 , len(self.arr[0])-2):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 11)
+                    rand_val = random.randint(0, 12)
                     point = 0
                     if j >= 1 and j <= len(self.arr[0]) - 2:
                         if self.arr[i - 1][j - 1] == 1:
@@ -227,7 +227,9 @@ class Map:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
                     if rand_val > 6 and condition == 1:
-                        self.arr[i][j] = 3
+                        for k in range(i-1, i+2):
+                            for l in range(j-1, j+2):
+                                self.arr[k][l] = random.choice([0, 3])
                 if 0 <= i <= 6 or len(self.arr[i]) - 6 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 0)
