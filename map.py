@@ -200,9 +200,9 @@ class Map:
 
                 # Mountain areas
                 if len(self.arr[i])//4-30 <= i <= len(self.arr[i])//4+30:
-                    rand_val = random.randint(0, 10)
+                    rand_val = random.randint(0, 20)
                     condition = self.check(i, j, 2)
-                    if rand_val > 8 and condition == 1:
+                    if rand_val > 15 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 2])
