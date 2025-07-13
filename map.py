@@ -130,7 +130,6 @@ def main():
     # area = pygame.Rect(50, 50, 10, 10)
 
     # pygame.draw.rect(screen, BLUE, area)
-    pygame.display.flip()
     # Game Loop
     running = True
     while running:
@@ -149,6 +148,9 @@ def main():
                 elif event.key == pygame.K_SPACE:
                     map.generate_map()
                     map.draw(screen)
+
+            pygame.display.flip()
+
 
 
 
