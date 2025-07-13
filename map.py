@@ -207,7 +207,7 @@ class Map:
         self.improve_map_realism(1, 1, len(self.arr) - 1)
         
         Random = random.randint(0, 10)
-        start = random.randint(0, len(self.arr)//1.5)
+        start = random.randint(0, round((len(self.arr))//1.5))
         end = random.randint(start + Random , round((len(self.arr))//1.5) + start + Random)
         if random.randint(0, 10) > 6:
             self.improve_map_realism(2, start, len(self.arr) - 1)
