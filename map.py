@@ -74,6 +74,62 @@ class Map:
                     if self.arr[i][j] == 1:
                         val += 1
         return val
+    
+    def improve_map_realism(self, smooth_passes=3):
+        """
+        Smooths and improves the terrain to make it more natural.
+        - smooth_passes: number of smoothing iterations
+        """
+        for _ in range(smooth_passes):
+            new_arr = copy.deepcopy(self.arr)
+
+            for i in range(1, len(self.arr) - 1):
+                for j in range(1, len(self.arr[0]) - 1):
+                    neighbors = [self.arr[i-1][j-1], self.arr[i-1][j], self.arr[i-1][j+1],
+                                self.arr[i][j-1],               self.arr[i][j+1],
+                                self.arr[i+1][j-1], self.arr[i+1][j], self.arr[i+1][j+1]]
+                    
+                    current = self.arr[i][j]
+                    counts = {val: neighbors.count(val) for val in set(neighbors)}
+                    
+                    # Majority vote smoothing: pick most frequent neighbor type
+                    if counts:
+                        majority = max(counts, key=counts.get)
+                        if counts[majority] >= 5 and majority != current:
+                            new_arr[i][j] = majority
+
+            self.arr = new_arr
+
+        self.refine_transitions()
+
+    def refine_transitions(self):
+        """
+        Refines transitions between land types (e.g., water to forest, desert to grassland)
+        """
+        for i in range(1, len(self.arr) - 1):
+            for j in range(1, len(self.arr[0]) - 1):
+                curr = self.arr[i][j]
+                neighbors = [self.arr[i+dx][j+dy]
+                            for dx in [-1, 0, 1]
+                            for dy in [-1, 0, 1]
+                            if not (dx == 0 and dy == 0)]
+
+                # Smooth forest borders
+                if curr == 5 and neighbors.count(1) >= 5:
+                    self.arr[i][j] = 1
+
+                # Desert blends into grassland
+                if curr == 4 and neighbors.count(1) >= 5:
+                    self.arr[i][j] = random.choice([1, 4])
+
+                # Ice blends into water
+                if curr == 3 and neighbors.count(0) >= 5:
+                    self.arr[i][j] = random.choice([0, 3])
+
+                # Mountains into grassland
+                if curr == 2 and neighbors.count(1) >= 6:
+                    self.arr[i][j] = random.choice([1, 2])
+
 
     def generate_map(self):
         for i in range(2, len(self.arr)-2):
@@ -146,6 +202,10 @@ class Map:
             for j in range(len(self.arr[0])):
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
+
+        self.transform_map()
+        self.improve_map_realism()
+
 
 
     def check(self, x, y, val):
