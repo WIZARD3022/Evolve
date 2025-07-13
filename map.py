@@ -81,7 +81,7 @@ class Map:
                 if i != 0 and i != len(self.arr) - 1:
                     rand_val = random.randint(0, 20)
                     point = 0
-                    if j != 0 and j != len(self.arr[0]) - 1:
+                    if j >= 1 and j <= len(self.arr[0]) - 2:
                         if self.arr[i - 1][j - 1] == 1:
                             point += 1
                         if self.arr[i - 1][j] == 1:
