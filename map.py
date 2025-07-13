@@ -76,8 +76,8 @@ class Map:
         return val
 
     def generate_map(self):
-        for i in range(len(self.arr)):
-            for j in range(len(self.arr[0])):
+        for i in range(2, len(self.arr)-2):
+            for j in range(2 , len(self.arr[0]-2)):
                 if i != 0 and i != len(self.arr) - 1:
                     rand_val = random.randint(0, 20)
                     point = 0
