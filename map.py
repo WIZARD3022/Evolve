@@ -86,8 +86,8 @@ class Map:
                             point += 1
                         if self.arr[i - 1][j] == 1:
                             point += 1
-                        if self.arr[i - 1][j + 1] == 1:
-                            point += 1
+                        # if self.arr[i - 1][j + 1] == 1:
+                        #     point += 1
                         if self.arr[i][j - 1] == 1:
                             point += 1
                         
@@ -98,17 +98,17 @@ class Map:
                             point += 1
                         if self.arr[i - 2][j] == 1:
                             point += 1
-                        if self.arr[i - 2][j + 1] == 1:
-                            point += 1
-                        if self.arr[i - 2][j + 2] == 1:
-                            point += 1
+                        # if self.arr[i - 2][j + 1] == 1:
+                        #     point += 1
+                        # if self.arr[i - 2][j + 2] == 1:
+                        #     point += 1
 
                         if self.arr[i - 1][j - 2] == 1:
                             point += 1
                         if self.arr[i - 1][j - 1] == 1:
                             point += 1
-                        if self.arr[i - 1][j + 2] == 1:
-                            point += 1
+                        # if self.arr[i - 1][j + 2] == 1:
+                        #     point += 1
 
                         # control = 0
                         # if i >= 5 and j >= 7:
