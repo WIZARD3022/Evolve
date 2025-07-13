@@ -66,8 +66,8 @@ class Map:
 
     def cal(self, x, y):
         val = 0
-        origin_x = x - 7
-        origin_y = y - 12
+        origin_x = x - 5
+        origin_y = y - 7
         for i in range(origin_x, x):
             for j in range(origin_y, y):
                 if i >= 0 and j >= 0 and i < len(self.arr) and j < len(self.arr[0]):
@@ -79,7 +79,7 @@ class Map:
         for i in range(len(self.arr)):
             for j in range(len(self.arr[0])):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 15)
+                    rand_val = random.randint(0, 20)
                     point = 0
                     if j != 0 and j != len(self.arr[0]) - 1:
                         if self.arr[i - 1][j - 1] == 1:
