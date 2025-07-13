@@ -173,6 +173,8 @@ class Map:
                     if rand_val > 9 and condition == 1:
                         self.arr[i][j] = 3
 
+        for i in range(1, len(self.arr)-1):
+            for j in range(1 ,len(self.arr[0])-1):
                 # Forest lands
                 if len(self.arr[i])//2-5 <= i <= len(self.arr[i])//2+5:
                     rand_val = random.randint(0, 10)
@@ -189,6 +191,8 @@ class Map:
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 5])
 
+        for i in range(1, len(self.arr)-1):
+            for j in range(1 ,len(self.arr[0])-1):
                 # Desert lands
                 if len(self.arr[i])//4-5 <= i <= len(self.arr[i])//4+5:
                     rand_val = random.randint(0, 10)
@@ -198,6 +202,8 @@ class Map:
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 4, 5])
 
+        for i in range(1, len(self.arr)-1):
+            for j in range(1 ,len(self.arr[0])-1):
                 # Mountain areas
                 if len(self.arr[i])//4-30 <= i <= len(self.arr[i])//4+30:
                     rand_val = random.randint(0, 20)
@@ -207,6 +213,8 @@ class Map:
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 2])
 
+        # for i in range(1, len(self.arr)-1):
+        #     for j in range(1 ,len(self.arr[0])-1):
 
                         
 
