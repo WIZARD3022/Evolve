@@ -182,14 +182,14 @@ class Map:
                     if rand_val > 6 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
-                                self.arr[k][l] = random.choice([1, 5])
+                                self.arr[k][l] = random.choice([0, 1, 5])
                 if len(self.arr[i])//2-10 <= i <= len(self.arr[i])//2+10:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 1)
                     if rand_val > 8 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
-                                self.arr[k][l] = random.choice([1, 5])
+                                self.arr[k][l] = random.choice([0, 1, 5])
 
         for i in range(1, len(self.arr)-1):
             for j in range(1 ,len(self.arr[0])-1):
@@ -200,7 +200,7 @@ class Map:
                     if rand_val > 6 and condition != 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
-                                self.arr[k][l] = random.choice([1, 4, 5])
+                                self.arr[k][l] = random.choice([0, 1, 4, 5])
 
         for i in range(1, len(self.arr)-1):
             for j in range(1 ,len(self.arr[0])-1):
@@ -208,10 +208,10 @@ class Map:
                 if len(self.arr[i])//4-30 <= i <= len(self.arr[i])//4+30:
                     rand_val = random.randint(0, 20)
                     condition = self.check(i, j, 2)
-                    if rand_val > 15 and condition == 1:
+                    if rand_val > 19 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
-                                self.arr[k][l] = random.choice([1, 2])
+                                self.arr[k][l] = random.choice([0, 1, 2])
 
         # for i in range(1, len(self.arr)-1):
         #     for j in range(1 ,len(self.arr[0])-1):
