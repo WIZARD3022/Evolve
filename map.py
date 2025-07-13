@@ -174,14 +174,14 @@ class Map:
                         self.arr[i][j] = 3
 
                 # Forest lands
-                if len(self.arr[i]//2)-5 <= i <= len(self.arr[i]//2)+5:
+                if len(self.arr[i])//2-5 <= i <= len(self.arr[i])//2+5:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 1)
                     if rand_val > 4 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 5])
-                if len(self.arr[i]//2)-10 <= i <= len(self.arr[i]//2)+10:
+                if len(self.arr[i])//2-10 <= i <= len(self.arr[i])//2+10:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 1)
                     if rand_val > 7 and condition == 1:
@@ -190,7 +190,7 @@ class Map:
                                 self.arr[k][l] = random.choice([1, 5])
 
                 # Desert lands
-                if len(self.arr[i]//4)-5 <= i <= len(self.arr[i]//4)+5:
+                if len(self.arr[i])//4-5 <= i <= len(self.arr[i])//4+5:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
                     if rand_val > 4 and condition != 1:
@@ -199,7 +199,7 @@ class Map:
                                 self.arr[k][l] = random.choice([1, 4, 5])
 
                 # Mountain areas
-                if len(self.arr[i]//4)-30 <= i <= len(self.arr[i]//4)+30:
+                if len(self.arr[i])//4-30 <= i <= len(self.arr[i])//4+30:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 2)
                     if rand_val > 4 and condition == 1:
