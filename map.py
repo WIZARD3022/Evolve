@@ -111,9 +111,9 @@ class Map:
         self.transform_map()
 
     def transform_map(self):
-        for i in range(len(self.arr)):
-            for j in range(len(self.arr[0])):
-                if 
+        # for i in range(len(self.arr)):
+        #     for j in range(len(self.arr[0])):
+                
         pass
 
     def update(self):
