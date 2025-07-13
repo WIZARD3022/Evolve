@@ -79,7 +79,7 @@ class Map:
         for i in range(2, len(self.arr)-2):
             for j in range(2 , len(self.arr[0])-2):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 12)
+                    rand_val = random.randint(0, 11)
                     point = 0
                     if j >= 1 and j <= len(self.arr[0]) - 2:
                         if self.arr[i - 1][j - 1] == 1:
@@ -165,26 +165,26 @@ class Map:
                 if 0 <= i <= 5 or len(self.arr[i]) - 5 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
-                    if rand_val > 6 and condition == 1:
+                    if rand_val > 7 and condition == 1:
                         self.arr[i][j] = 3
                 if 0 <= i <= 6 or len(self.arr[i]) - 6 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 0)
-                    if rand_val > 8 and condition == 1:
+                    if rand_val > 9 and condition == 1:
                         self.arr[i][j] = 3
 
                 # Forest lands
                 if len(self.arr[i])//2-5 <= i <= len(self.arr[i])//2+5:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 1)
-                    if rand_val > 4 and condition == 1:
+                    if rand_val > 6 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 5])
                 if len(self.arr[i])//2-10 <= i <= len(self.arr[i])//2+10:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 1)
-                    if rand_val > 7 and condition == 1:
+                    if rand_val > 8 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 5])
@@ -193,7 +193,7 @@ class Map:
                 if len(self.arr[i])//4-5 <= i <= len(self.arr[i])//4+5:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
-                    if rand_val > 4 and condition != 1:
+                    if rand_val > 6 and condition != 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 4, 5])
@@ -202,7 +202,7 @@ class Map:
                 if len(self.arr[i])//4-30 <= i <= len(self.arr[i])//4+30:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 2)
-                    if rand_val > 4 and condition == 1:
+                    if rand_val > 6 and condition == 1:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([1, 2])
