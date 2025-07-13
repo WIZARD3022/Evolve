@@ -76,7 +76,7 @@ class Map:
                         val += 1
         return val
     
-    def improve_map_realism(self, smooth_passes=1):
+    def improve_map_realism(self, smooth_passes=1, start = 1, end =[]):
         """
         Smooths and improves the terrain to make it more natural.
         - smooth_passes: number of smoothing iterations
@@ -84,8 +84,8 @@ class Map:
         for _ in range(smooth_passes):
             new_arr = copy.deepcopy(self.arr)
 
-            for i in range(1, len(self.arr) - 1):
-                for j in range(1, len(self.arr[0]) - 1):
+            for i in range(start, len(end) - 1):
+                for j in range(start, len(end[0]) - 1):
                     neighbors = [self.arr[i-1][j-1], self.arr[i-1][j], self.arr[i-1][j+1],
                                 self.arr[i][j-1],               self.arr[i][j+1],
                                 self.arr[i+1][j-1], self.arr[i+1][j], self.arr[i+1][j+1]]
@@ -204,7 +204,17 @@ class Map:
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
 
-        self.improve_map_realism()
+        self.improve_map_realism(1, 1, len(self.arr) - 1)
+        
+        Random = random.randint(0, 10)
+        start = random.randint(0, len(self.arr)//1.5)
+        end = random.randint(start + Random , len(self.arr)//1.5 + start + Random)
+        if random.randint(0, 10) > 6:
+            self.improve_map_realism(2, start, len(self.arr) - 1)
+        if random.randint(0, 10) > 6:
+            self.improve_map_realism(3, start, len(self.arr) - 1)
+
+
 
 
 
