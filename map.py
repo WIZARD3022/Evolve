@@ -88,9 +88,10 @@ class Map:
                         if self.arr[i][j - 1] == 1:
                             point += 1
                         
+                        control = 0
                         if i >= 5 and j >= 7:
                             control = self.cal(i, j)
-                            
+
                         prob = 10 - point * 2.8 + control * 1
                         if rand_val > prob:
                             self.arr[i][j] = 1
