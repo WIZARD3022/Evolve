@@ -76,7 +76,7 @@ class Map:
                         val += 1
         return val
     
-    def improve_map_realism(self, smooth_passes=5):
+    def improve_map_realism(self, smooth_passes=1):
         """
         Smooths and improves the terrain to make it more natural.
         - smooth_passes: number of smoothing iterations
