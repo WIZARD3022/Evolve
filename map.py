@@ -204,7 +204,6 @@ class Map:
                 if i == 0 or i == len(self.arr) - 1 or j <= 1 or j >= len(self.arr[0]) - 2:
                     self.arr[i][j] = 0
 
-        # self.transform_map()
         self.improve_map_realism()
 
 
@@ -228,12 +227,12 @@ class Map:
                     rand_val = random.randint(0, 10)
                     condition = self.check(i, j, 0)
                     if rand_val > 7 and condition == 1:
-                        self.arr[i][j] = random.choice([0, 3])
+                        self.arr[i][j] = 3
                 if 0 <= i <= 6 or len(self.arr[i]) - 6 <= i <= len(self.arr[i]) - 1:
                     rand_val = random.randint(0, 12)
                     condition = self.check(i, j, 0)
                     if rand_val > 9 and condition == 1:
-                        self.arr[i][j] = random.choice([0, 3])
+                        self.arr[i][j] = 3
 
         for i in range(1, len(self.arr)-1):
             for j in range(1 ,len(self.arr[0])-1):
