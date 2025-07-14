@@ -74,7 +74,7 @@ class Map:
                     forest += 1
                     pygame.draw.rect(screen, DARK_GREEN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
 
-        self.dashbord = f"Water: {100*water/count}%, Grassland: {100*grassland/count}%, Ice: {100*ice/count}%, Mountain: {100*mountain/count}%, Desert: {100*desert/count}%, Forest: {100*forest/count}%"
+        self.dashbord = f"Water: {round(100*water/count,2)}%, Grassland: {round(100*grassland/count,2)}%, Ice: {round(100*ice/count,2)}%, Mountain: {round(100*mountain/count,2)}%, Desert: {round(100*desert/count,2)}%, Forest: {round(100*forest/count,2)}%"
 
     def cal(self, x, y):
         val = 0
