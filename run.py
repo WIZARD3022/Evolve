@@ -10,7 +10,7 @@ def main():
     # Screen settings
     WIDTH, HEIGHT = 1400, 800
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    font = pygame.font.SysFont(None, 18)
+    font = pygame.font.SysFont(None, 16)
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
@@ -52,18 +52,33 @@ def main():
                     map2.arr = map2.new()
                     map2.generate_map()
                     map2.draw(screen, 500, 50)
+                    text_surface = font.render(map2.dashbord, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(750, 370))
+                    screen.blit(text_surface, text_rect)
                     map3.arr = map3.new()
                     map3.generate_map()
                     map3.draw(screen, 950, 50)
+                    text_surface = font.render(map3.dashbord, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(1200, 370))
+                    screen.blit(text_surface, text_rect)
                     map4.arr = map4.new()
                     map4.generate_map()
-                    map4.draw(screen, 50, 400)
+                    map4.draw(screen, 50, 350)
+                    text_surface = font.render(map4.dashbord, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(250, 670))
+                    screen.blit(text_surface, text_rect)
                     map5.arr = map5.new()
                     map5.generate_map()
-                    map5.draw(screen, 500, 400)
+                    map5.draw(screen, 500, 350)
+                    text_surface = font.render(map5.dashbord, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(750, 670))
+                    screen.blit(text_surface, text_rect)
                     map6.arr = map6.new()
                     map6.generate_map()
-                    map6.draw(screen, 950, 400)
+                    map6.draw(screen, 950, 350)
+                    text_surface = font.render(map6.dashbord, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(1200, 670))
+                    screen.blit(text_surface, text_rect)
 
         pygame.display.flip()
 
