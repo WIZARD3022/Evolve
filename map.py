@@ -1,5 +1,4 @@
 import pygame
-import sys
 import random
 import copy
 
@@ -206,13 +205,16 @@ class Map:
 
         self.improve_map_realism(1, 1, len(self.arr) - 1)
         
-        Random = random.randint(0, 10)
-        start = random.randint(0, round((len(self.arr))//1.5))
-        end = random.randint(start + Random , round((len(self.arr))//1.5) + start + Random)
+        Random1 = random.randint(0, 10)
+        start1 = random.randint(0, round((len(self.arr))//1.5))
+        end1 = random.randint(start1 + Random1 , round((len(self.arr))//1.5) + start1 + Random1)
         if random.randint(0, 10) > 6:
-            self.improve_map_realism(2, start, len(self.arr) - 1)
+            self.improve_map_realism(2, start1, end1)
+        Random2 = random.randint(0, 10)
+        start2 = random.randint(0, round((len(self.arr))//2.5))
+        end2 = random.randint(start1 + start2 + Random2 + Random1 , round((len(self.arr))//2.5) + start2 + Random1 + Random2)
         if random.randint(0, 10) > 6:
-            self.improve_map_realism(3, start, len(self.arr) - 1)
+            self.improve_map_realism(4, start2, end2)
 
 
 
