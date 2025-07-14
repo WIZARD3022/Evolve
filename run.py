@@ -10,6 +10,7 @@ def main():
     # Screen settings
     WIDTH, HEIGHT = 1400, 800
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    font = pygame.font.SysFont(None, 60)
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
@@ -45,6 +46,9 @@ def main():
                     map1.arr = map1.new()
                     map1.generate_map()
                     map1.draw(screen, 50, 50)
+                    text_surface = font.render(map1, True, (0, 255, 0))  # Green text
+                    text_rect = text_surface.get_rect(center=(50, 350))
+                    screen.blit(text_surface, text_rect)
                     map2.arr = map2.new()
                     map2.generate_map()
                     map2.draw(screen, 500, 50)

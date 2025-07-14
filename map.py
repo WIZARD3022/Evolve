@@ -41,28 +41,40 @@ class Map:
         self.size = [2, 2]   # tile size
         self.arr = self.new()  # Initialize the map array
         self.generate_map()
+        self.dashbord = ""
 
     def new(self):
         return [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
 
     def draw(self, screen, Screen_x=50 , Screen_y=50):
         # Placeholder for map drawing 
+
+        water = grassland = ice = mountain = desert = forest = count = 0
         for i in range(len(self.arr)):
             print(self.arr[i])
             for j in range(len(self.arr[0])):
                 # Draw each tile based on its type
+                count += 1
                 if self.arr[i][j] == 0:
+                    water += 1
                     pygame.draw.rect(screen, BLUE, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 1:
+                    grassland += 1
                     pygame.draw.rect(screen, GREEN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 2:
+                    mountain += 1
                     pygame.draw.rect(screen, BROWN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 3:
+                    ice += 1
                     pygame.draw.rect(screen, WHITE, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 4:
+                    desert += 1
                     pygame.draw.rect(screen, YELLOW, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 5:
+                    forest += 1
                     pygame.draw.rect(screen, DARK_GREEN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
+
+        self.dashbord = f"Water: {100*water/count}%, Grassland: {100*grassland/count}%, Ice: {100*ice/count}%, Mountain: {100*mountain/count}%, Desert: {100*desert/count}%, Forest: {100*forest/count}%"
 
     def cal(self, x, y):
         val = 0
