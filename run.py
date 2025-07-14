@@ -8,7 +8,7 @@ def main():
     pygame.init()
 
     # Screen settings
-    WIDTH, HEIGHT = 800, 600
+    WIDTH, HEIGHT = 1000, 800
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
     # Clock for controlling FPS
