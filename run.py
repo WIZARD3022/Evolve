@@ -53,7 +53,7 @@ def main():
                     map2.generate_map()
                     map2.draw(screen, 500, 50)
                     text_surface = font.render(map2.dashbord, True, (0, 255, 0))  # Green text
-                    text_rect = text_surface.get_rect(center=(750, 370))
+                    text_rect = text_surface.get_rect(center=(700, 370))
                     screen.blit(text_surface, text_rect)
                     map3.arr = map3.new()
                     map3.generate_map()
@@ -71,7 +71,7 @@ def main():
                     map5.generate_map()
                     map5.draw(screen, 500, 390)
                     text_surface = font.render(map5.dashbord, True, (0, 255, 0))  # Green text
-                    text_rect = text_surface.get_rect(center=(750, 700))
+                    text_rect = text_surface.get_rect(center=(700, 700))
                     screen.blit(text_surface, text_rect)
                     map6.arr = map6.new()
                     map6.generate_map()
