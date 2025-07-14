@@ -206,17 +206,14 @@ class Map:
         self.improve_map_realism(1, 1, len(self.arr) - 1)
         
         Random = random.randint(0, 10)
+        Random2 = random.randint(0, 10)
         start = random.randint(0, round((len(self.arr))/2))
         end = random.randint(start + Random , round((len(self.arr))/2) + start + Random)
-        print(f"Start: {start}, End: {end}, Random: {Random}")
+        # print(f"Start: {start}, End: {end}, Random: {Random}")
         if random.randint(0, 10) > 6:
             self.improve_map_realism(2, start, end)
         if random.randint(0, 10) > 6:
-            self.improve_map_realism(3, start, end)
-
-
-
-
+            self.improve_map_realism(5, start+Random2*2, end+Random2*2)
 
     def check(self, x, y, val):
 
@@ -285,12 +282,6 @@ class Map:
                         for k in range(i-1, i+2):
                             for l in range(j-1, j+2):
                                 self.arr[k][l] = random.choice([0, 1, 2])
-
-        # for i in range(1, len(self.arr)-1):
-        #     for j in range(1 ,len(self.arr[0])-1):
-
-                        
-
 
     def update(self):
         # Placeholder for map update logic
