@@ -215,6 +215,9 @@ class Map:
         if random.randint(0, 10) > 6:
             self.improve_map_realism(5, start+Random2*2, end+Random2*2)
 
+        self.improve_map_realism(4, 1, 10)
+        self.improve_map_realism(4, len(self.arr) - 1, len(self.arr) - 11)
+
     def check(self, x, y, val):
 
         if val == 2:
