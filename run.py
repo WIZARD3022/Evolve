@@ -10,7 +10,7 @@ def main():
     # Screen settings
     WIDTH, HEIGHT = 1400, 800
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    font = pygame.font.SysFont(None, 13)
+    font = pygame.font.SysFont(None, 18)
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
