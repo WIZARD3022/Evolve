@@ -46,24 +46,24 @@ class Map:
     def new(self):
         return [[0 for _ in range(self.tiles[0])] for _ in range(self.tiles[1])]
 
-    def draw(self, screen):
+    def draw(self, screen, Screen_x=50 , Screen_y=50):
         # Placeholder for map drawing 
         for i in range(len(self.arr)):
             print(self.arr[i])
             for j in range(len(self.arr[0])):
                 # Draw each tile based on its type
                 if self.arr[i][j] == 0:
-                    pygame.draw.rect(screen, BLUE, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, BLUE, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 1:
-                    pygame.draw.rect(screen, GREEN, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, GREEN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 2:
-                    pygame.draw.rect(screen, BROWN, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, BROWN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 3:
-                    pygame.draw.rect(screen, WHITE, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, WHITE, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 4:
-                    pygame.draw.rect(screen, YELLOW, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, YELLOW, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
                 elif self.arr[i][j] == 5:
-                    pygame.draw.rect(screen, DARK_GREEN, (j * self.size[0] + 50, i * self.size[1] + 50, self.size[0], self.size[1]))
+                    pygame.draw.rect(screen, DARK_GREEN, (j * self.size[0] + Screen_x, i * self.size[1] + Screen_y, self.size[0], self.size[1]))
 
     def cal(self, x, y):
         val = 0

@@ -15,7 +15,12 @@ def main():
     clock = pygame.time.Clock()
     FPS = 60
 
-    map = Map(700, 500)
+    map1 = Map(700, 500)
+    map2 = Map(700, 500)
+    map3 = Map(700, 500)
+    map4 = Map(700, 500)
+    map5 = Map(700, 500)
+    map6 = Map(700, 500)
     # map.draw(screen)
 
     # area = pygame.Rect(50, 50, 10, 10)
@@ -37,9 +42,24 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     running = False
                 elif event.key == pygame.K_SPACE:
-                    map.arr = map.new()
-                    map.generate_map()
-                    map.draw(screen)
+                    map1.arr = map1.new()
+                    map1.generate_map()
+                    map1.draw(screen, 50, 50)
+                    map2.arr = map2.new()
+                    map2.generate_map()
+                    map2.draw(screen, 400, 50)
+                    map3.arr = map3.new()
+                    map3.generate_map()
+                    map3.draw(screen, 750, 50)
+                    map4.arr = map4.new()
+                    map4.generate_map()
+                    map4.draw(screen, 50, 400)
+                    map5.arr = map5.new()
+                    map5.generate_map()
+                    map5.draw(screen, 400, 400)
+                    map6.arr = map6.new()
+                    map6.generate_map()
+                    map6.draw(screen, 750, 400)
 
         pygame.display.flip()
 
