@@ -38,7 +38,7 @@ class Map:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.tiles = [350, 250]  # tile count
+        self.tiles = [210, 150]  # tile count
         self.size = [2, 2]   # tile size
         self.arr = self.new()  # Initialize the map array
         self.generate_map()
