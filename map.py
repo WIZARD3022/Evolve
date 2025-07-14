@@ -205,20 +205,13 @@ class Map:
 
         self.improve_map_realism(1, 1, len(self.arr) - 1)
         
-        random1 = random.randint(0, 10)
-        start1 = random.randint(0, round(len(self.arr) / 1.5))
-        end1 = min(random.randint(start1 + random1, round(len(self.arr) / 1.5) + start1 + random1), len(self.arr) - 1)
-
+        Random = random.randint(0, 10)
+        start = random.randint(0, round((len(self.arr))//1.5))
+        end = random.randint(start + Random , round((len(self.arr))//1.5) + start + Random)
         if random.randint(0, 10) > 6:
-            self.improve_map_realism(2, start1, end1)
-
-        random2 = random.randint(0, 10)
-        start2 = random.randint(0, round(len(self.arr) / 2.5))
-        end2 = min(random.randint(start1 + start2 + random2 + random1, round(len(self.arr) / 2.5) + start2 + random1 + random2), len(self.arr) - 1)
-
+            self.improve_map_realism(2, start, end)
         if random.randint(0, 10) > 6:
-            self.improve_map_realism(4, start2, end2)
-
+            self.improve_map_realism(3, start, end)
 
 
 
