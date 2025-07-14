@@ -135,7 +135,7 @@ class Map:
         for i in range(2, len(self.arr)-2):
             for j in range(2 , len(self.arr[0])-2):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 12)
+                    rand_val = random.randint(0, 14)
                     point = 0
                     if j >= 1 and j <= len(self.arr[0]) - 2:
                         if self.arr[i - 1][j - 1] == 1:
