@@ -135,7 +135,7 @@ class Map:
         for i in range(2, len(self.arr)-2):
             for j in range(2 , len(self.arr[0])-2):
                 if i != 0 and i != len(self.arr) - 1:
-                    rand_val = random.randint(0, 14)
+                    rand_val = random.randint(0, 13)
                     point = 0
                     if j >= 1 and j <= len(self.arr[0]) - 2:
                         if self.arr[i - 1][j - 1] == 1:
@@ -188,7 +188,7 @@ class Map:
                         # if i >= 5 and j >= 7:
                         control = self.cal(i, j)
 
-                        prob = 10 - point * 1.5 + control * 1.5
+                        prob = 10 - point * 1.5 + control * 2.5
                         if rand_val > prob:
                             self.arr[i][j] = 1
                     else:
