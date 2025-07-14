@@ -63,21 +63,21 @@ def main():
                     screen.blit(text_surface, text_rect)
                     map4.arr = map4.new()
                     map4.generate_map()
-                    map4.draw(screen, 50, 370)
+                    map4.draw(screen, 50, 375)
                     text_surface = font.render(map4.dashbord, True, (0, 255, 0))  # Green text
                     text_rect = text_surface.get_rect(center=(250, 670))
                     screen.blit(text_surface, text_rect)
                     map5.arr = map5.new()
                     map5.generate_map()
-                    map5.draw(screen, 500, 370)
+                    map5.draw(screen, 500, 390)
                     text_surface = font.render(map5.dashbord, True, (0, 255, 0))  # Green text
                     text_rect = text_surface.get_rect(center=(750, 670))
                     screen.blit(text_surface, text_rect)
                     map6.arr = map6.new()
                     map6.generate_map()
-                    map6.draw(screen, 950, 370)
+                    map6.draw(screen, 950, 400)
                     text_surface = font.render(map6.dashbord, True, (0, 255, 0))  # Green text
-                    text_rect = text_surface.get_rect(center=(1200, 670))
+                    text_rect = text_surface.get_rect(center=(1200, 770))
                     screen.blit(text_surface, text_rect)
 
         pygame.display.flip()
