@@ -20,7 +20,7 @@ def main():
     map1 = Map(700, 500)
     map2 = Map(700, 500)
     # map3 = Map(700, 500)
-    graph1 = Graph(420, 300, 10)
+    graph1 = Graph(420, 300, 20)
 
     map4 = Map(700, 500)
 
