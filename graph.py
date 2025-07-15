@@ -23,7 +23,7 @@ class Graph:
         pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x, Screen_y ), (Screen_x + self.origin_x, Screen_y + self.height),1)
         pygame.draw.line(screen, WHITE, (Screen_x , Screen_y + self.origin_y), (Screen_x + self.width, Screen_y + self.origin_y),1)
 
-        for i in range(0, self.width - self.origin_x, self.scale):
+        for i in range(0, self.width - int(self.origin_x), self.scale):
             pygame.draw.line(screen, WHITE, (Screen_x + i + self.origin_x, Screen_y + self.origin_y - 5), (Screen_x + i + self.origin_x, Screen_y + self.origin_y + 5), 1)
-        for i in range(0, self.height - self.origin_y, self.scale):
+        for i in range(0, self.height - int(self.origin_y), self.scale):
             pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x - 5, Screen_y + i), (Screen_x + self.origin_x + 5, Screen_y + i), 1)
