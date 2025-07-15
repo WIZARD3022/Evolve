@@ -1,4 +1,5 @@
 import pygame
+import time
 
 WHITE = (255, 255, 255)
 GLASS_GREEN = (137, 173, 137)
@@ -14,8 +15,8 @@ class Graph:
         self.width = width
         self.height = height
         self.scale = scale
-        self.origin_x = 50
-        self.origin_y = height - 50
+        self.origin_x = height // 6
+        self.origin_y = height - height // 6
 
     def draw(self, screen, Screen_x, Screen_y):
         pygame.draw.rect(screen, GRAY, (Screen_x, Screen_y, self.width, self.height))
