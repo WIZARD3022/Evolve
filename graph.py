@@ -15,9 +15,9 @@ class Graph:
         self.height = height
         self.scale = scale
         self.origin_x = 50
-        self.origin_y = width - 50
+        self.origin_y = 50
 
     def draw(self, screen, Screen_x, Screen_y):
         pygame.draw.rect(screen, GRAY, (Screen_x, Screen_y, self.width, self.height))
         pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x, Screen_y ), (Screen_x + self.origin_x, Screen_y + self.height),1)
-        pygame.draw.line(screen, WHITE, (Screen_x , Screen_y - self.origin_y), (Screen_x + self.width, Screen_y - self.origin_y),1)
+        pygame.draw.line(screen, WHITE, (Screen_x , Screen_y + self.origin_y), (Screen_x + self.width, Screen_y + self.origin_y),1)
