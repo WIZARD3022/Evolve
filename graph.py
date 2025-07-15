@@ -6,7 +6,7 @@ GLASS_RED = (194, 5, 22)
 GLASS_BLUE = (21, 119, 243)
 GLASS_YELLOW = (254, 231, 46)
 BLACK = (0, 0, 0)
-GRAY = (128, 128, 128)
+GRAY = (28, 28, 28)
 
 
 class Graph:
@@ -19,5 +19,5 @@ class Graph:
 
     def draw(self, screen, Screen_x, Screen_y):
         pygame.draw.rect(screen, GRAY, (Screen_x, Screen_y, self.width, self.height))
-        pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x, Screen_y + self.origin_y),
-                         (Screen_x + self.origin_x, Screen_y + self.height), 1)
+        pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x, Screen_y + self.height), (Screen_x + self.origin_x, Screen_y + self.origin_y),
+                          1)
