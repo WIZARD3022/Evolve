@@ -19,7 +19,7 @@ class Graph:
         self.origin_y = height - height // 6.5
 
     def text(self, screen, text, x, y):
-        font = pygame.font.SysFont(None, 16)
+        font = pygame.font.SysFont(None, 12)
         text_surface = font.render(text, True, (0, 255, 0))  # Green text
         text_rect = text_surface.get_rect(center=(x, y))
         screen.blit(text_surface, text_rect)
