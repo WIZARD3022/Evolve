@@ -31,8 +31,8 @@ class Graph:
 
         for i in range(0, self.width - int(self.origin_x), self.scale):
             pygame.draw.line(screen, WHITE, (Screen_x + i + self.origin_x, Screen_y + self.origin_y - 5), (Screen_x + i + self.origin_x, Screen_y + self.origin_y + 5), 1)
-            self.text(screen, str(i*self.scale), Screen_x + i + self.origin_x, (self.width - int(self.origin_x)) - (Screen_y + self.origin_y + 15))
+            self.text(screen, str(i*self.scale), Screen_x + i + self.origin_x, Screen_y + self.origin_y + 15)
 
         for i in range(0, self.height - int(self.height - self.origin_y), self.scale):
-            pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x - 5, Screen_y + i), (Screen_x + self.origin_x + 5, Screen_y + i), 1)
+            pygame.draw.line(screen, GLASS_GREEN, (Screen_x + self.origin_x - 5, Screen_y + i), (Screen_x + self.origin_x + 5, Screen_y + i), 1)
             self.text(screen, str(i*self.scale), Screen_x + self.origin_x - 15, Screen_y + i)
