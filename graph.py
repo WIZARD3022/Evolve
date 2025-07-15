@@ -22,6 +22,7 @@ class Graph:
         pygame.draw.rect(screen, GRAY, (Screen_x, Screen_y, self.width, self.height))
         pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x, Screen_y ), (Screen_x + self.origin_x, Screen_y + self.height),1)
         pygame.draw.line(screen, WHITE, (Screen_x , Screen_y + self.origin_y), (Screen_x + self.width, Screen_y + self.origin_y),1)
+        
         for i in range(0, self.width, self.scale):
             pygame.draw.line(screen, WHITE, (Screen_x + i, Screen_y + self.origin_y - 5), (Screen_x + i, Screen_y + self.origin_y + 5), 1)
         for i in range(0, self.height, self.scale):
