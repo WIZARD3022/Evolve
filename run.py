@@ -1,6 +1,7 @@
 import pygame
 import sys
 from map import Map
+from graph import Graph
 
 def main():
 
@@ -20,8 +21,10 @@ def main():
     map2 = Map(700, 500)
     map3 = Map(700, 500)
     map4 = Map(700, 500)
-    map5 = Map(700, 500)
-    map6 = Map(700, 500)
+
+    graph1 = Graph(700, 500, 1)
+    # map5 = Map(700, 500)
+    # map6 = Map(700, 500)
     # map.draw(screen)
 
     # area = pygame.Rect(50, 50, 10, 10)
@@ -67,18 +70,19 @@ def main():
                     text_surface = font.render(map4.dashbord, True, (0, 255, 0))  # Green text
                     text_rect = text_surface.get_rect(center=(250, 700))
                     screen.blit(text_surface, text_rect)
-                    map5.arr = map5.new()
-                    map5.generate_map()
-                    map5.draw(screen, 500, 390)
-                    text_surface = font.render(map5.dashbord, True, (0, 255, 0))  # Green text
-                    text_rect = text_surface.get_rect(center=(700, 700))
-                    screen.blit(text_surface, text_rect)
-                    map6.arr = map6.new()
-                    map6.generate_map()
-                    map6.draw(screen, 950, 390)
-                    text_surface = font.render(map6.dashbord, True, (0, 255, 0))  # Green text
-                    text_rect = text_surface.get_rect(center=(1200, 700))
-                    screen.blit(text_surface, text_rect)
+                    graph1.draw(screen, 500, 390)
+                    # map5.arr = map5.new()
+                    # map5.generate_map()
+                    # map5.draw(screen, 500, 390)
+                    # text_surface = font.render(map5.dashbord, True, (0, 255, 0))  # Green text
+                    # text_rect = text_surface.get_rect(center=(700, 700))
+                    # screen.blit(text_surface, text_rect)
+                    # map6.arr = map6.new()
+                    # map6.generate_map()
+                    # map6.draw(screen, 950, 390)
+                    # text_surface = font.render(map6.dashbord, True, (0, 255, 0))  # Green text
+                    # text_rect = text_surface.get_rect(center=(1200, 700))
+                    # screen.blit(text_surface, text_rect)
 
         pygame.display.flip()
 
