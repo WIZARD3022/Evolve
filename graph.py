@@ -36,3 +36,6 @@ class Graph:
         for i in range(0, self.height - int(self.height - self.origin_y), self.scale):
             pygame.draw.line(screen, WHITE, (Screen_x + self.origin_x - 5, Screen_y + i), (Screen_x + self.origin_x + 5, Screen_y + i), 1)
             self.text(screen, str(i*self.scale), Screen_x + self.origin_x - 15, self.height - i )
+
+    def update(self, screen):
+        pass
