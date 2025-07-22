@@ -38,7 +38,6 @@ def main():
         pygame.display.set_caption(f"Map and fps :{clock.tick(FPS)}")
 
         # screen.fill(BLACK)  # Clear screen
-
         # Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
